@@ -20,3 +20,5 @@ def create_app():
     app.add_url_rule('/', endpoint='index')
 
     return app
+
+app = create_app()

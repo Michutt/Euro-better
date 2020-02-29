@@ -1,1 +1,1 @@
-web: gunicorn EuroBetter:create_app
+web: gunicorn EuroBetter:app
