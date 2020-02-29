@@ -1,0 +1,1 @@
+from EuroBetter import app

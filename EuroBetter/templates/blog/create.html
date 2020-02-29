@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New match creator{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="country1">HOST</label>
+    <input name="country1" id="country1" value="{{ request.form['country1'] }}" required>
+    <label for="country2">GUEST</label>
+    <input name="country2" id="country2" value="{{ request.form['country2'] }}" required>
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}
