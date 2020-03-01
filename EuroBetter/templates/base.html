@@ -1,7 +1,9 @@
 <!doctype html>
+<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
 <title>{% block title %}{% endblock %} Euro</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<nav>
+<body>
+<div class="header">
   <h1>EuroBETter</h1>
   <ul>
     {% if g.user %}
@@ -12,13 +14,32 @@
       <li><a href="{{ url_for('auth.login') }}">Log In</a>
     {% endif %}
   </ul>
-</nav>
-<section class="content">
-  <header>
+</div>
+
+<div class="row">
+  <div class="col-3">
+  </div>
+
+  <div class="col-3 col-6 matches">
     {% block header %}{% endblock %}
-  </header>
+  </div>
+
   {% for message in get_flashed_messages() %}
     <div class="flash">{{ message }}</div>
   {% endfor %}
-  {% block content %}{% endblock %}
-</section>
+
+  <div class="col-9">
+  </div>
+
+</div>
+<div class="any">
+  <div class="col-3">
+  </div>
+
+  <div class="col-3 col-6 menu">
+    {% block content %}{% endblock %}
+  </div>
+</div>
+
+
+</body>
